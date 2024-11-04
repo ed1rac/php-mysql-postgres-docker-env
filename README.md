@@ -1,3 +1,4 @@
+[Read it in English](README_en.md)
 # 🌐 Ambiente de Desenvolvimento PHP com MySQL e PostgreSQL usando Docker 🐳
 
 Bem-vindo ao repositório do ambiente de desenvolvimento PHP com MySQL e PostgreSQL! Este projeto utiliza Docker para criar um ambiente local prático e rápido para desenvolvimento de aplicações PHP. 🚀
