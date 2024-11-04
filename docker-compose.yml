@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  php-apache:
+    build: .
+    container_name: php_dev_apache
+    ports:
+      - "8081:80" # Alterando para a porta 8081
+    volumes:
+      - ./html:/var/www/html # Volume para persistir os arquivos do projeto PHP
+    depends_on:
+      - mysql
+      - postgres
+    restart: unless-stopped
+
+  mysql:
+    image: mariadb:latest
+    container_name: php_dev_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: devdb
+      MYSQL_USER: devuser
+      MYSQL_PASSWORD: devpass
+    volumes:
+      - ./mysql:/var/lib/mysql # Persistência dos dados do MySQL
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:latest
+    container_name: php_dev_postgres
+    environment:
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: devpass
+      POSTGRES_DB: devdb
+    volumes:
+      - ./postgres:/var/lib/postgresql/data # Persistência dos dados do PostgreSQL
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
