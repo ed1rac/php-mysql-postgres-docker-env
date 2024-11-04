@@ -16,4 +16,4 @@ Este ambiente é ideal para desenvolvedores que precisam de uma configuração m
 4. Acesse o phpMyAdmin no localhost:8082 para gerenciar o banco de dados MySQL.
 
 ---
-> Alternativa: como alternativa você pode acessar o repositório da imagem no [docker hub](https://hub.docker.com/) acessando o seguinte link: [https://hub.docker.com/repository/docker/ed1rac/php_dev_apache_mysql_postgre/general](https://hub.docker.com/repository/docker/ed1rac/php_dev_apache_mysql_postgre/general)
+> Alternativa: como alternativa você pode acessar o repositório da imagem no [docker hub](https://hub.docker.com/) acessando o seguinte link: [https://hub.docker.com/repository/docker/ed1rac/php_dev_apache_mysql_postgre/general](https://hub.docker.com/repository/docker/ed1rac/php_dev_apache_mysql_postgre/general) ou usar localmente o comando `docker push ed1rac/php_dev_apache_mysql_postgre`
