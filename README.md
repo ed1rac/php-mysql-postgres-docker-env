@@ -4,7 +4,7 @@ Bem-vindo ao repositório do ambiente de desenvolvimento PHP com MySQL e Postgre
 
 ## 📦 Conteúdo do Repositório
 
-Conteúdo: (esses são os únicos arquivos realmente obrigatórios. Você pode criar as pastas `html`, `mysql` e `postgres` localmente vazias para servirem de persistência para seus dados)
+Sobre o conteúdo: (esses são os únicos arquivos realmente obrigatórios. Você pode criar as pastas `html`, `mysql` e `postgres` localmente vazias para servirem de persistência para seus dados)
 
 - **Dockerfile** 📝: Define a imagem base do servidor PHP com Apache.
 - **docker-compose.yml** ⚙️: Arquivo para configurar e orquestrar os containers Docker, incluindo PHP/Apache, MySQL e PostgreSQL.
