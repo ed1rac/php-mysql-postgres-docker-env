@@ -1,4 +1,4 @@
-# *Título do Repositório*: Ambiente de Desenvolvimento PHP com MySQL e PostgreSQL usando Docker
+# Ambiente de Desenvolvimento PHP com MySQL e PostgreSQL usando Docker
 
 *Descrição*:
 Este repositório contém os arquivos necessários para configurar um ambiente de desenvolvimento completo em PHP com suporte aos bancos de dados MySQL e PostgreSQL usando Docker. Inclui um Dockerfile para configurar a imagem do Apache e PHP, juntamente com um docker-compose.yml para orquestrar os containers do PHP/Apache, MySQL, PostgreSQL e phpMyAdmin.
