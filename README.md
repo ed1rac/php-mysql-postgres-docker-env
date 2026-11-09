@@ -1,103 +1,75 @@
-[Read in English](README_en.md)
-# 🌐 Ambiente de Desenvolvimento PHP com MySQL e PostgreSQL usando Docker 🐳
+# 🐳 Ambiente PHP + MySQL + PostgreSQL + Apache via Docker
 
-Bem-vindo ao repositório do ambiente de desenvolvimento PHP com MySQL e PostgreSQL! Este projeto utiliza Docker para criar um ambiente local prático e rápido para desenvolvimento de aplicações PHP. 🚀
+<div align="center">
 
-## 📦 Conteúdo do Repositório
+[![Docker](https://img.shields.io/badge/Docker-Compose_v2-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![PHP](https://img.shields.io/badge/PHP-8.x_%2B_Apache-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![phpMyAdmin](https://img.shields.io/badge/Admin-phpMyAdmin-6C78AF?style=for-the-badge&logo=phpmyadmin&logoColor=white)](https://www.phpmyadmin.net/)
 
-Sobre o conteúdo: (esses são os únicos arquivos realmente obrigatórios. Você pode criar as pastas `html`, `mysql` e `postgres` localmente vazias para servirem de persistência para seus dados)
+**Stack pronta, leve e configurada para desenvolvimento de aplicações web em PHP com suporte nativo a bancos relacionais MySQL e PostgreSQL.**
 
-- **Dockerfile** 📝: Define a imagem base do servidor PHP com Apache.
-- **docker-compose.yml** ⚙️: Arquivo para configurar e orquestrar os containers Docker, incluindo PHP/Apache, MySQL e PostgreSQL.
-
-## 🔧 Pré-requisitos
-
-Antes de começar, você precisará dos seguintes itens instalados na sua máquina:
-
-- [Docker](https://www.docker.com/get-started) 🐳
-- [Docker Compose](https://docs.docker.com/compose/install/) 📦
-
-## 🚀 Como Usar
-
-1. **Clone o Repositório**
-   
-   Primeiro, faça o clone do repositório para a sua máquina local:
-   
-   ```sh
-   git clone https://github.com/ed1rac/php-mysql-postgres-docker-env.git
-   cd php-mysql-postgres-docker-env
-   ```
-
-2. **Inicie os Containers**
-
-   Para iniciar o ambiente, execute o comando abaixo. Isso criará e iniciará os containers em segundo plano:
-   
-   ```sh
-   docker-compose up -d
-   ```
-
-3. **Acesse a Aplicação PHP**
-
-   Depois de iniciar os containers, você poderá acessar a aplicação PHP pelo navegador. Basta ir para:
-   
-   - [http://localhost:8081](http://localhost:8081)
-
-4. **Acesse os Bancos de Dados**
-
-   Os bancos de dados MySQL e PostgreSQL estarão disponíveis nas portas padrão:
-
-   - **MySQL**: `localhost:3306`
-   - **PostgreSQL**: `localhost:5432`
-
-   Você pode usar um cliente como o [DBeaver](https://dbeaver.io/) ou qualquer outro cliente de banco de dados para se conectar e gerenciar os bancos de dados.
-
-## ⚙️ Configuração dos Bancos de Dados
-
-Aqui estão as credenciais padrão para se conectar aos bancos de dados:
-
-### MySQL
-- **Host**: `localhost`
-- **Porta**: `3306`
-- **Usuário**: `devuser`
-- **Senha**: `devpass`
-
-### PostgreSQL
-- **Host**: `localhost`
-- **Porta**: `5432`
-- **Usuário**: `devuser`
-- **Senha**: `devpass`
-
-## 🛠️ Personalização
-
-Este ambiente pode ser facilmente personalizado de acordo com as suas necessidades. Aqui estão algumas sugestões:
-
-- **Adicionar Extensões PHP**: Modifique o `Dockerfile` para incluir extensões adicionais do PHP, conforme necessário.
-- **Configurar Variáveis de Ambiente**: Atualize o `docker-compose.yml` para definir variáveis de ambiente personalizadas.
-- **Volumes e Persistência de Dados**: Adicione ou modifique volumes no `docker-compose.yml` para persistir dados de maneira mais personalizada.
-
-## 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT. Para mais detalhes, consulte o arquivo [LICENSE](LICENSE).
-
-## 🤝 Contribuindo
-
-Contribuições são sempre bem-vindas! Se você tiver sugestões de melhorias, sinta-se à vontade para abrir uma **issue** ou enviar um **pull request**.
-
-## ❤️ Agradecimentos
-
-Um agradecimento especial a todos os desenvolvedores e contribuidores que ajudam a tornar o Docker e o PHP ainda melhores para a comunidade. Este projeto é inspirado pelo espírito colaborativo de desenvolvedores ao redor do mundo.
+</div>
 
 ---
 
-⭐ **Se este projeto foi útil para você, deixe uma estrela no repositório!** ⭐
+## 📐 Topologia dos Serviços
 
-🛠️ **Happy Coding!** 😊
+```mermaid
+flowchart LR
+    Dev["👨‍💻 Desenvolvedor (Localhost)"]
+    subgraph Docker ["Rede Docker Interna"]
+        Apache["🌐 Servidor Web: Apache + PHP 8.x (Porta 8080)"]
+        PMA["🗄️ phpMyAdmin (Porta 8081)"]
+        MySQL[("🐬 Banco MySQL 8.0 (Porta 3306)")]
+        PG[("🐘 Banco PostgreSQL (Porta 5432)")]
+    end
+    Dev -->|Código PHP / HTML| Apache
+    Dev -->|Interface Web| PMA
+    Apache <-->|PDO MySQL| MySQL
+    Apache <-->|PDO PgSQL| PG
+    PMA <--> MySQL
+```
+
+---
+
+## 🚀 Como Subir o Ambiente em 1 Comando
+
+```bash
+# 1. Clonar este repositório
+git clone https://github.com/ed1rac/php-mysql-postgres-docker-env.git
+cd php-mysql-postgres-docker-env
+
+# 2. Iniciar todos os containers em segundo plano
+docker compose up -d
+```
+
+---
+
+## 🌐 Portas e Acessos Padrão
+
+| Serviço | URL / Porta | Credenciais Padrão |
+| :--- | :--- | :--- |
+| **Aplicação PHP** | [http://localhost:8080](http://localhost:8080) | Os arquivos colocados na pasta `./html` aparecem aqui |
+| **phpMyAdmin** | [http://localhost:8081](http://localhost:8081) | Servidor: `mysql`, Usuário: `root`, Senha: `rootpassword` |
+| **MySQL DB** | `localhost:3306` | Banco: `meubanco`, Usuário: `user`, Senha: `password` |
+| **PostgreSQL DB** | `localhost:5432` | Banco: `meubanco`, Usuário: `user`, Senha: `password` |
+
+---
+
+## 🛑 Parar ou Reiniciar o Ambiente
+
+```bash
+docker compose down      # Parar os containers
+docker compose logs -f   # Acompanhar os logs em tempo real
+```
 
 ---
 
 ## ☕ Apoie o Projeto (Me Pague um Café / Buy Me a Coffee)
 
-Este projeto é desenvolvido com dedicação e carinho. Se este projeto foi útil para os seus estudos, trabalho ou produtividade diária e você quiser apoiar o desenvolvimento contínuo:
+Este projeto é desenvolvido com dedicação e carinho à disseminação do conhecimento e da tecnologia. Se ele foi útil para os seus estudos, aulas, trabalho ou produtividade diária e você quiser apoiar o desenvolvimento contínuo:
 
 - ☕ **Buy Me a Coffee (Internacional / Cartão / QR Code)**:
   - 👉 **[https://buymeacoffee.com/edkallenn](https://buymeacoffee.com/edkallenn)**
