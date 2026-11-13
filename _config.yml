@@ -1,0 +1,5 @@
+theme: jekyll-theme-cayman
+title: "🐳 PHP + MySQL + PostgreSQL Docker Dev Environment"
+description: "Ambiente completo de desenvolvimento web conteinerizado com Docker Compose."
+kramdown:
+  parse_block_html: true
