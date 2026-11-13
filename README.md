@@ -1,15 +1,14 @@
 # 🐳 Ambiente PHP + MySQL + PostgreSQL + Apache via Docker
 
 <div align="center">
-
-[![Docker](https://img.shields.io/badge/Docker-Compose_v2-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.x_%2B_Apache-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![phpMyAdmin](https://img.shields.io/badge/Admin-phpMyAdmin-6C78AF?style=for-the-badge&logo=phpmyadmin&logoColor=white)](https://www.phpmyadmin.net/)
-
-**Stack pronta, leve e configurada para desenvolvimento de aplicações web em PHP com suporte nativo a bancos relacionais MySQL e PostgreSQL.**
-
+  <p>
+    <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-Compose_v2-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"></a>
+    <a href="https://www.php.net/"><img src="https://img.shields.io/badge/PHP-8.x_%2B_Apache-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"></a>
+    <a href="https://www.mysql.com/"><img src="https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"></a>
+    <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/PostgreSQL-15-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"></a>
+    <a href="https://www.phpmyadmin.net/"><img src="https://img.shields.io/badge/Admin-phpMyAdmin-6C78AF?style=for-the-badge&logo=phpmyadmin&logoColor=white" alt="phpMyAdmin"></a>
+  </p>
+  <p><strong>Stack pronta, leve e configurada para desenvolvimento de aplicações web em PHP com suporte nativo a bancos relacionais MySQL e PostgreSQL.</strong></p>
 </div>
 
 ---
